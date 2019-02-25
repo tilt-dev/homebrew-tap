@@ -2,9 +2,9 @@
 class Tilt < Formula
   desc "Local Kubernetes development with no stress"
   homepage "https://tilt.build/"
-  url "http://github.com/windmilleng/tilt/releases/download/v0.7.5/tilt.0.7.5.mac.x86_64.tar.gz"
-  version "0.7.5"
-  sha256 "96576c0f459d827c3d79538078f15700159a85a51f00f7d2ab04cdc1d77b6401"
+  url "http://github.com/windmilleng/tilt/releases/download/v0.7.6/tilt.0.7.6.mac.x86_64.tar.gz"
+  version "0.7.6"
+  sha256 "88ad22b9d8be70131a83226948e88b1e655c6153b4e5f40ab19b85695dbecf48"
 
   def install
     bin.install "tilt"
