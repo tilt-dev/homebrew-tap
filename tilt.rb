@@ -2,16 +2,16 @@
 class Tilt < Formula
   desc "Local Kubernetes development with no stress"
   homepage "https://tilt.build/"
-  version "0.10.23"
+  version "0.10.24"
   bottle :unneeded
 
   if OS.mac?
-    url "http://github.com/windmilleng/tilt/releases/download/v0.10.23/tilt.0.10.23.mac.x86_64.tar.gz"
-    sha256 "ea86d931b6bf8449536b6c7b5cb26bd8d11d4ab1612c0cb7c5f7244b2ba3b259"
+    url "http://github.com/windmilleng/tilt/releases/download/v0.10.24/tilt.0.10.24.mac.x86_64.tar.gz"
+    sha256 "fd43ddc51696d069075f7858c802d0ef574293253621f6a15cc0fc7726baa917"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "http://github.com/windmilleng/tilt/releases/download/v0.10.23/tilt.0.10.23.linux.x86_64.tar.gz"
-      sha256 "2af6accccc6a5b8bbf627979c14d5ffc2f1c39dc41b5e8f4240849a28a9675d9"
+      url "http://github.com/windmilleng/tilt/releases/download/v0.10.24/tilt.0.10.24.linux.x86_64.tar.gz"
+      sha256 "934f01b9ce86f587b657cfc15d5da597c9957869404017ba97e59bae98ff3bc0"
     end
   end
 
