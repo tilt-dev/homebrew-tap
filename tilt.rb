@@ -2,16 +2,16 @@
 class Tilt < Formula
   desc "Tilt powers multi-service developments for teams that deploy to Kubernetes."
   homepage "https://tilt.dev/"
-  version "0.14.3"
+  version "0.15.0"
   bottle :unneeded
 
   if OS.mac?
-    url "http://github.com/tilt-dev/tilt/releases/download/v0.14.3/tilt.0.14.3.mac.x86_64.tar.gz"
-    sha256 "14bb41a7a31e455abcd534cbcb379ef81087620c29ed19932dfd8bb582dc6439"
+    url "http://github.com/tilt-dev/tilt/releases/download/v0.15.0/tilt.0.15.0.mac.x86_64.tar.gz"
+    sha256 "9be076d73f652c7c85557b8decf5e78a765d1a04e2192d9a468eb9729ec9db21"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "http://github.com/tilt-dev/tilt/releases/download/v0.14.3/tilt.0.14.3.linux.x86_64.tar.gz"
-      sha256 "446920bffe6a8df991d3dbbc45a4158e1b4ba10a69fdf5ae2f3319847c24f6bb"
+      url "http://github.com/tilt-dev/tilt/releases/download/v0.15.0/tilt.0.15.0.linux.x86_64.tar.gz"
+      sha256 "ba1631cb29c6764658c2d0cbe94ebae506f2b304ec6dd1beda1637e3d0eb4f8c"
     end
   end
 
