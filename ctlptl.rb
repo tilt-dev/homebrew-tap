@@ -2,16 +2,16 @@
 class Ctlptl < Formula
   desc "Making local Kubernetes clusters easy to set up and tear down"
   homepage "https://ctlptl.dev/"
-  version "0.3.0"
+  version "0.3.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/tilt-dev/ctlptl/releases/download/v0.3.0/ctlptl.0.3.0.mac.x86_64.tar.gz"
-    sha256 "b64ee44566ed43a6f003d2972d7e3107e8215b88e46901cfa726ef385b6a9bc4"
+    url "https://github.com/tilt-dev/ctlptl/releases/download/v0.3.1/ctlptl.0.3.1.mac.x86_64.tar.gz"
+    sha256 "4d8d2cbc39bf2d5126aa2ceb1aaa7d31107989775bd0853e5b7c04e6e347ad6e"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/tilt-dev/ctlptl/releases/download/v0.3.0/ctlptl.0.3.0.linux.x86_64.tar.gz"
-    sha256 "ee45742a239b470865f928a0b4f9ddc5aee7f7c4ab44673283fcaef015ee6bae"
+    url "https://github.com/tilt-dev/ctlptl/releases/download/v0.3.1/ctlptl.0.3.1.linux.x86_64.tar.gz"
+    sha256 "68df51f4b2d4bb2367d4e9ad4b7598f059992cebcb11f8867ba76c7268894c9c"
   end
 
   def install
