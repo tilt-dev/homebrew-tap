@@ -2,24 +2,24 @@
 class Tilt < Formula
   desc "Tilt powers multi-service developments for teams that deploy to Kubernetes."
   homepage "https://tilt.dev/"
-  version "0.18.13"
+  version "0.19.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/tilt-dev/tilt/releases/download/v0.18.13/tilt.0.18.13.mac.x86_64.tar.gz"
-    sha256 "8f6c81dd024582dfc878774821d33e38ca10d49c86d26da5a5b55af8a96ffb73"
+    url "https://github.com/tilt-dev/tilt/releases/download/v0.19.0/tilt.0.19.0.mac.x86_64.tar.gz"
+    sha256 "5c87d13f718dfca3da139698118f64b2e524ba4fc3171a58171d5994b95639d9"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/tilt-dev/tilt/releases/download/v0.18.13/tilt.0.18.13.linux.x86_64.tar.gz"
-      sha256 "0342df4060e8855cdc4a0d50e4a3a3cad07bfcf51f690e35a7b03ab2c557552e"
+      url "https://github.com/tilt-dev/tilt/releases/download/v0.19.0/tilt.0.19.0.linux.x86_64.tar.gz"
+      sha256 "2f3a13db0ee8610dc46204dd55185f7e70befbd4052a113e9e95097e0cbaabed"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/tilt-dev/tilt/releases/download/v0.18.13/tilt.0.18.13.linux.arm64_ALPHA.tar.gz"
-        sha256 "d71d272cd8fc05f2b24fb5f5637deb89ee7c64736312bfdc5ef0984c58d17d1a"
+        url "https://github.com/tilt-dev/tilt/releases/download/v0.19.0/tilt.0.19.0.linux.arm64_ALPHA.tar.gz"
+        sha256 "380364a8b5be87f2fcf2f6b1e68606c623dda36cf22abb96558c6218d4fa60d8"
       else
-        url "https://github.com/tilt-dev/tilt/releases/download/v0.18.13/tilt.0.18.13.linux.arm_ALPHA.tar.gz"
-        sha256 "aa729d9ecb6b2000d274a149c0f23aa3c441a426105abfbe52bdf5b30fa4b2f2"
+        url "https://github.com/tilt-dev/tilt/releases/download/v0.19.0/tilt.0.19.0.linux.arm_ALPHA.tar.gz"
+        sha256 "ae8bfba8293e7244cad182f94b52e99e9beace5810c3b5cde557470d5f7426e7"
       end
     end
   end
