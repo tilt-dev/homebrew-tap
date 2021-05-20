@@ -5,24 +5,24 @@
 class Ctlptl < Formula
   desc "Making local Kubernetes clusters easy to set up and tear down"
   homepage "https://ctlptl.dev/"
-  version "0.5.2"
+  version "0.5.3"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/tilt-dev/ctlptl/releases/download/v0.5.2/ctlptl.0.5.2.mac.x86_64.tar.gz"
-    sha256 "17735804d0ca486eae6deba18879c418eb4087cec5080927e5c0e8a71fb25c31"
+    url "https://github.com/tilt-dev/ctlptl/releases/download/v0.5.3/ctlptl.0.5.3.mac.x86_64.tar.gz"
+    sha256 "10e4efaf0a6ab8877021bf11082f83f1348e67bba50944226d38e141854a53d0"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/tilt-dev/ctlptl/releases/download/v0.5.2/ctlptl.0.5.2.mac.arm64.tar.gz"
-    sha256 "4028a9daa21b42626e984e106130f587bee650552ad0f22ed3e0b65c28bc7a50"
+    url "https://github.com/tilt-dev/ctlptl/releases/download/v0.5.3/ctlptl.0.5.3.mac.arm64.tar.gz"
+    sha256 "e2d7b8c4bdda2a330a2e4981908c6c8412de0d53f6daffc8e1047c8ecafef034"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/tilt-dev/ctlptl/releases/download/v0.5.2/ctlptl.0.5.2.linux.x86_64.tar.gz"
-    sha256 "848b56043553caecd9a6810d8db2559aa69c96814fb647cf649a5c8b5f89f785"
+    url "https://github.com/tilt-dev/ctlptl/releases/download/v0.5.3/ctlptl.0.5.3.linux.x86_64.tar.gz"
+    sha256 "dbc30efe5d2a87a28054ef82086b6f6ad57b6906bea75ca824e897ca161d489c"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/tilt-dev/ctlptl/releases/download/v0.5.2/ctlptl.0.5.2.linux.arm64.tar.gz"
-    sha256 "b4d551a1caf9d72f096e0676bb5332d8ed1f458ceb6e7ef39e0da8f20b37c8f7"
+    url "https://github.com/tilt-dev/ctlptl/releases/download/v0.5.3/ctlptl.0.5.3.linux.arm64.tar.gz"
+    sha256 "4fb215fe2abbd12a00c33e3d71a1da74ed5d7657684c7863039557642bc1969d"
   end
 
   def install
