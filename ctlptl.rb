@@ -5,24 +5,29 @@
 class Ctlptl < Formula
   desc "Making local Kubernetes clusters easy to set up and tear down"
   homepage "https://ctlptl.dev/"
-  version "0.5.3"
+  version "0.5.4"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/tilt-dev/ctlptl/releases/download/v0.5.3/ctlptl.0.5.3.mac.x86_64.tar.gz"
-    sha256 "10e4efaf0a6ab8877021bf11082f83f1348e67bba50944226d38e141854a53d0"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.5.4/ctlptl.0.5.4.mac.x86_64.tar.gz"
+      sha256 "522d4ff863a4c4bebc7f266ca2fc472b7beea87508879dace99e97c11a2744be"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.5.4/ctlptl.0.5.4.mac.arm64.tar.gz"
+      sha256 "c21b94bd48d9d9e8339aa80face7867f6aaeebb3b1cecd97fdd8739e39a72098"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/tilt-dev/ctlptl/releases/download/v0.5.3/ctlptl.0.5.3.mac.arm64.tar.gz"
-    sha256 "e2d7b8c4bdda2a330a2e4981908c6c8412de0d53f6daffc8e1047c8ecafef034"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/tilt-dev/ctlptl/releases/download/v0.5.3/ctlptl.0.5.3.linux.x86_64.tar.gz"
-    sha256 "dbc30efe5d2a87a28054ef82086b6f6ad57b6906bea75ca824e897ca161d489c"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/tilt-dev/ctlptl/releases/download/v0.5.3/ctlptl.0.5.3.linux.arm64.tar.gz"
-    sha256 "4fb215fe2abbd12a00c33e3d71a1da74ed5d7657684c7863039557642bc1969d"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.5.4/ctlptl.0.5.4.linux.x86_64.tar.gz"
+      sha256 "2af8b6e710af3edce1dbaecf32cb629d1a01f0fd4a2ffd0b3967e31f2df2271b"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.5.4/ctlptl.0.5.4.linux.arm64.tar.gz"
+      sha256 "e42dc86c22ca5d6b347999560284b659d741af1d667a4dc39589baaca2e2ac0d"
+    end
   end
 
   def install
