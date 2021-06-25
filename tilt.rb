@@ -5,28 +5,28 @@
 class Tilt < Formula
   desc "Tilt powers multi-service developments for teams that deploy to Kubernetes."
   homepage "https://tilt.dev/"
-  version "0.20.8"
+  version "0.20.9"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/tilt-dev/tilt/releases/download/v0.20.8/tilt.0.20.8.mac.x86_64.tar.gz"
-    sha256 "955380b58befb419bb96e4dc252646c8feb7528277b78acb949dc7cec2e5ce18"
+    url "https://github.com/tilt-dev/tilt/releases/download/v0.20.9/tilt.0.20.9.mac.x86_64.tar.gz"
+    sha256 "0f1a116a623b610b80b4ed9eab1fe196480dff325351150a303bd2c8b1e80284"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/tilt-dev/tilt/releases/download/v0.20.8/tilt.0.20.8.mac.arm64_ALPHA.tar.gz"
-    sha256 "96c99d33c2feb54b80638577c2395312a6d00051f310e5548675e874b18ed964"
+    url "https://github.com/tilt-dev/tilt/releases/download/v0.20.9/tilt.0.20.9.mac.arm64_ALPHA.tar.gz"
+    sha256 "1b88a0368512de27a8090eda9454226a7e0592d11695609a480f4bc2e1af4182"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/tilt-dev/tilt/releases/download/v0.20.8/tilt.0.20.8.linux.x86_64.tar.gz"
-    sha256 "1d791966fd38c8ee4b06158fb6ef9d51db0dcc0b3049269267d2cf306983ea83"
+    url "https://github.com/tilt-dev/tilt/releases/download/v0.20.9/tilt.0.20.9.linux.x86_64.tar.gz"
+    sha256 "1b18054e0fda850e76ec8a77dd94debb279568244c7350c6ed6110f2ac7b667a"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/tilt-dev/tilt/releases/download/v0.20.8/tilt.0.20.8.linux.arm_ALPHA.tar.gz"
-    sha256 "15bdc4bbae765ddadfb64c8756ee767d98e2a811086a0ecfbfb0d6af1a88737a"
+    url "https://github.com/tilt-dev/tilt/releases/download/v0.20.9/tilt.0.20.9.linux.arm_ALPHA.tar.gz"
+    sha256 "b512c4b931573282f6c6d9bcd4fa57bde91abb8e542eb4fb50ad27f6e864e59b"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/tilt-dev/tilt/releases/download/v0.20.8/tilt.0.20.8.linux.arm64_ALPHA.tar.gz"
-    sha256 "ad4cbf713362c0aed3084a67c3c8944b93cc8c6721278db3a383870ff39d45ca"
+    url "https://github.com/tilt-dev/tilt/releases/download/v0.20.9/tilt.0.20.9.linux.arm64_ALPHA.tar.gz"
+    sha256 "869b4063eec966e395fee5ee142bfd07e7adfab8175e34998ed249bcc78c3f48"
   end
 
   def install
