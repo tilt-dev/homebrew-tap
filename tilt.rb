@@ -6,7 +6,6 @@ class Tilt < Formula
   desc "Tilt powers multi-service developments for teams that deploy to Kubernetes."
   homepage "https://tilt.dev/"
   version "0.22.14"
-  bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/tilt-dev/tilt/releases/download/v0.22.14/tilt.0.22.14.mac.x86_64.tar.gz"

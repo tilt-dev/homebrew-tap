@@ -6,7 +6,6 @@ class Ctlptl < Formula
   desc "Making local Kubernetes clusters easy to set up and tear down"
   homepage "https://ctlptl.dev/"
   version "0.6.0"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.arm?
