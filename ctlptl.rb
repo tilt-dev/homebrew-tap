@@ -5,32 +5,44 @@
 class Ctlptl < Formula
   desc "Making local Kubernetes clusters easy to set up and tear down"
   homepage "https://ctlptl.dev/"
-  version "0.6.0"
+  version "0.6.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.6.0/ctlptl.0.6.0.mac.arm64.tar.gz"
-      sha256 "ce423c3a8f2ba711fdf7dbbd98c6655ad13c8442dc89635ff3400d411eb68510"
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.6.1/ctlptl.0.6.1.mac.arm64.tar.gz"
+      sha256 "28a781217950f72439abd1f68e2ef3bab05dc6a4d50f79615ccf72f11733c0bb"
+
+      def install
+        bin.install "ctlptl"
+      end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.6.0/ctlptl.0.6.0.mac.x86_64.tar.gz"
-      sha256 "2a1438481ed2e3ef26df4a486495a8c9540840ce46b999955cb07e7659a143fe"
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.6.1/ctlptl.0.6.1.mac.x86_64.tar.gz"
+      sha256 "834b72d72c41d08906e2ca06e568f23cf5e4426e86f3e6997113f6188bc558df"
+
+      def install
+        bin.install "ctlptl"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.6.0/ctlptl.0.6.0.linux.arm64.tar.gz"
-      sha256 "3a2262ae166412db138654252a6bc3d89d6751bb11cad308318d4c2753f3f467"
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.6.1/ctlptl.0.6.1.linux.arm64.tar.gz"
+      sha256 "d43e8c4750170e4e94e2fc6a0b96b08f74be068c58cba91bdcffcfb7b319ce0a"
+
+      def install
+        bin.install "ctlptl"
+      end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.6.0/ctlptl.0.6.0.linux.x86_64.tar.gz"
-      sha256 "80ffabb3723ee219fa1518253256f28d93ec41edf7126ea9b38c5cbfdd7061ac"
-    end
-  end
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.6.1/ctlptl.0.6.1.linux.x86_64.tar.gz"
+      sha256 "309641d068c521e9179cb6a7a8b401b9a278ad397cfb750bde42301b2a26ed14"
 
-  def install
-    bin.install "ctlptl"
+      def install
+        bin.install "ctlptl"
+      end
+    end
   end
 
   test do
