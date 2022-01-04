@@ -5,42 +5,90 @@
 class Ctlptl < Formula
   desc "Making local Kubernetes clusters easy to set up and tear down"
   homepage "https://ctlptl.dev/"
-  version "0.6.2"
+  version "0.7.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.6.2/ctlptl.0.6.2.mac.arm64.tar.gz"
-      sha256 "e2f05e94322b501c928b6cddfe8d5894afd8418c29149d79a8a3fc9da3a558cb"
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.7.0/ctlptl.0.7.0.mac.arm64.tar.gz"
+      sha256 "19f9a258c4b29c2040e454bdf0087ba016c004ddc61b5bd184d3a58f43927dd0"
 
       def install
         bin.install "ctlptl"
+
+        # Install bash completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "bash")
+        (bash_completion/"ctlptl").write output
+
+        # Install zsh completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "zsh")
+        (zsh_completion/"_ctlptl").write output
+
+        # Install fish completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "fish")
+        (fish_completion/"ctlptl.fish").write output
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.6.2/ctlptl.0.6.2.mac.x86_64.tar.gz"
-      sha256 "cbd2d545369ce8de134ed18419c1551feb448018ed6e9731995ebb35600c9392"
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.7.0/ctlptl.0.7.0.mac.x86_64.tar.gz"
+      sha256 "62106ff568f2a418c7c5657ff19544b682e67b080a05213d0dfd9f07b6a21eae"
 
       def install
         bin.install "ctlptl"
+
+        # Install bash completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "bash")
+        (bash_completion/"ctlptl").write output
+
+        # Install zsh completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "zsh")
+        (zsh_completion/"_ctlptl").write output
+
+        # Install fish completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "fish")
+        (fish_completion/"ctlptl.fish").write output
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.6.2/ctlptl.0.6.2.linux.arm64.tar.gz"
-      sha256 "5bcfe53febd7f156fdb9692fb46a3f1e20c2c1e52fdfd79188115a94ff00482e"
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.7.0/ctlptl.0.7.0.linux.arm64.tar.gz"
+      sha256 "30a349ef9423ad8b39d8703d5e56f1e52ace48e094cf0051505ba3c386ecd8fd"
 
       def install
         bin.install "ctlptl"
+
+        # Install bash completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "bash")
+        (bash_completion/"ctlptl").write output
+
+        # Install zsh completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "zsh")
+        (zsh_completion/"_ctlptl").write output
+
+        # Install fish completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "fish")
+        (fish_completion/"ctlptl.fish").write output
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.6.2/ctlptl.0.6.2.linux.x86_64.tar.gz"
-      sha256 "74816bd5c024cca2458a054f2505609edeb94a3777b3532a568a74f6d4a13bc7"
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.7.0/ctlptl.0.7.0.linux.x86_64.tar.gz"
+      sha256 "5f753192881d84697b7211db88665c35401501786bd77540fb940230aa63a119"
 
       def install
         bin.install "ctlptl"
+
+        # Install bash completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "bash")
+        (bash_completion/"ctlptl").write output
+
+        # Install zsh completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "zsh")
+        (zsh_completion/"_ctlptl").write output
+
+        # Install fish completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "fish")
+        (fish_completion/"ctlptl.fish").write output
       end
     end
   end
