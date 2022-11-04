@@ -5,12 +5,12 @@
 class Ctlptl < Formula
   desc "Making local Kubernetes clusters easy to set up and tear down"
   homepage "https://ctlptl.dev/"
-  version "0.8.11"
+  version "0.8.12"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.11/ctlptl.0.8.11.mac.arm64.tar.gz"
-      sha256 "e4893b3cc47f80e814c20e5c02a69f15612e7b74c80849b4f833e4d2bf2034ee"
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.12/ctlptl.0.8.12.mac.arm64.tar.gz"
+      sha256 "7de6ad8a4f12822a0e67c051d36a76cc85c8e62cde1ed1487c0683bd6aae6db3"
 
       def install
         bin.install "ctlptl"
@@ -29,8 +29,8 @@ class Ctlptl < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.11/ctlptl.0.8.11.mac.x86_64.tar.gz"
-      sha256 "cabc62f109a1df659c0404daba589a67478b60b58d08b0569ab1d4917cde1a44"
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.12/ctlptl.0.8.12.mac.x86_64.tar.gz"
+      sha256 "b09e62c17e0d6c982095f2e104f3c4db1652db353c543d8ec6ba160825dda694"
 
       def install
         bin.install "ctlptl"
@@ -52,8 +52,8 @@ class Ctlptl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.11/ctlptl.0.8.11.linux.arm64.tar.gz"
-      sha256 "1f88b1c07106bebf33405c8e5aed28932bba0fb54b5f96882071a208b7340ae0"
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.12/ctlptl.0.8.12.linux.arm64.tar.gz"
+      sha256 "9d247c6a8a481d7a51127cd87ba1f2368adbca6037012f66344de087a6e001ca"
 
       def install
         bin.install "ctlptl"
@@ -72,8 +72,8 @@ class Ctlptl < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.11/ctlptl.0.8.11.linux.x86_64.tar.gz"
-      sha256 "84ed936b0bdd92a56ec9bbafe7c50335941ddfa6055357d579431ff4f01881ec"
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.12/ctlptl.0.8.12.linux.x86_64.tar.gz"
+      sha256 "a944b33491a1693b2fb485fcf9976e41c953c62b3a2853c8c9d13b01d64d2960"
 
       def install
         bin.install "ctlptl"
