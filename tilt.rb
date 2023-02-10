@@ -5,12 +5,12 @@
 class Tilt < Formula
   desc "A dev environment as code for microservice apps"
   homepage "https://tilt.dev/"
-  version "0.31.1"
+  version "0.31.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/tilt-dev/tilt/releases/download/v0.31.1/tilt.0.31.1.mac.arm64.tar.gz"
-      sha256 "521e5155f64fda844cc4916e85da4e3443d534b1b4b943523fd8b0237f0827ed"
+    if Hardware::CPU.intel?
+      url "https://github.com/tilt-dev/tilt/releases/download/v0.31.2/tilt.0.31.2.mac.x86_64.tar.gz"
+      sha256 "ade0877e72f56a089377e517efc86369220ac7b6a81f078e8e99a9c29aa244eb"
 
       def install
         bin.install "tilt"
@@ -28,9 +28,9 @@ class Tilt < Formula
         (fish_completion/"tilt.fish").write output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/tilt-dev/tilt/releases/download/v0.31.1/tilt.0.31.1.mac.x86_64.tar.gz"
-      sha256 "fca5ef5bb9086ff974a061bce1b484268ee72508a280cdb17e64a1c1d77b5901"
+    if Hardware::CPU.arm?
+      url "https://github.com/tilt-dev/tilt/releases/download/v0.31.2/tilt.0.31.2.mac.arm64.tar.gz"
+      sha256 "da1d5b4b3b29058d7af368b3c935a4b1db2b1f25dabcd95fc1c43303ae7365fd"
 
       def install
         bin.install "tilt"
@@ -51,9 +51,29 @@ class Tilt < Formula
   end
 
   on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/tilt-dev/tilt/releases/download/v0.31.2/tilt.0.31.2.linux.x86_64.tar.gz"
+      sha256 "9ec1a219393367fc41dd5f5f1083f60d6e9839e5821b8170c26481bf6b19dc7e"
+
+      def install
+        bin.install "tilt"
+
+        # Install bash completion
+        output = Utils.safe_popen_read("#{bin}/tilt", "completion", "bash")
+        (bash_completion/"tilt").write output
+
+        # Install zsh completion
+        output = Utils.safe_popen_read("#{bin}/tilt", "completion", "zsh")
+        (zsh_completion/"_tilt").write output
+
+        # Install fish completion
+        output = Utils.safe_popen_read("#{bin}/tilt", "completion", "fish")
+        (fish_completion/"tilt.fish").write output
+      end
+    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/tilt-dev/tilt/releases/download/v0.31.1/tilt.0.31.1.linux.arm.tar.gz"
-      sha256 "620c9faa59b638eace8f9f69389894aeab64288b1b1353141e072759117c85d4"
+      url "https://github.com/tilt-dev/tilt/releases/download/v0.31.2/tilt.0.31.2.linux.arm.tar.gz"
+      sha256 "2ecd43f8c2b0d5c1802a13a83633f739c5fe5704e6ee1bf39fed9d5a313f84e4"
 
       def install
         bin.install "tilt"
@@ -72,28 +92,8 @@ class Tilt < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tilt-dev/tilt/releases/download/v0.31.1/tilt.0.31.1.linux.arm64.tar.gz"
-      sha256 "1535891f128613b967f52fa635e0620b20cb2a849c6fa9655a27bbdaf905e20a"
-
-      def install
-        bin.install "tilt"
-
-        # Install bash completion
-        output = Utils.safe_popen_read("#{bin}/tilt", "completion", "bash")
-        (bash_completion/"tilt").write output
-
-        # Install zsh completion
-        output = Utils.safe_popen_read("#{bin}/tilt", "completion", "zsh")
-        (zsh_completion/"_tilt").write output
-
-        # Install fish completion
-        output = Utils.safe_popen_read("#{bin}/tilt", "completion", "fish")
-        (fish_completion/"tilt.fish").write output
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/tilt-dev/tilt/releases/download/v0.31.1/tilt.0.31.1.linux.x86_64.tar.gz"
-      sha256 "0f39b125ba89ed5d6bd37072ca1610068c6e8cc08a7f226a00e755ed7f57ff0e"
+      url "https://github.com/tilt-dev/tilt/releases/download/v0.31.2/tilt.0.31.2.linux.arm64.tar.gz"
+      sha256 "8a0fca3b29e482bd3c58fc1777e4be05f508723a6482494878a275f7d5a7f2c1"
 
       def install
         bin.install "tilt"
