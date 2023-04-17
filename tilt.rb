@@ -5,12 +5,12 @@
 class Tilt < Formula
   desc "A dev environment as code for microservice apps"
   homepage "https://tilt.dev/"
-  version "0.32.1"
+  version "0.32.2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/tilt-dev/tilt/releases/download/v0.32.1/tilt.0.32.1.mac.arm64.tar.gz"
-      sha256 "8337bd855e1af75e7ae12a31d6e41d60424ef56e62473c66bd0efcd70f89f003"
+      url "https://github.com/tilt-dev/tilt/releases/download/v0.32.2/tilt.0.32.2.mac.arm64.tar.gz"
+      sha256 "4c6cc9b4d8b7a6f224cb3a738e22ebe3b8e5a1c5ccb9b1ee6e6544f1299e3795"
 
       def install
         bin.install "tilt"
@@ -29,8 +29,8 @@ class Tilt < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/tilt-dev/tilt/releases/download/v0.32.1/tilt.0.32.1.mac.x86_64.tar.gz"
-      sha256 "f32044427b443258971fcd0d9d0e5c6cdfd58a9d9eba0857c233e8b9febaaeb4"
+      url "https://github.com/tilt-dev/tilt/releases/download/v0.32.2/tilt.0.32.2.mac.x86_64.tar.gz"
+      sha256 "330ab90729ae161b19c2359617c0e08cb9cb5edea20361cbdc84b6e3ce30d4aa"
 
       def install
         bin.install "tilt"
@@ -51,9 +51,9 @@ class Tilt < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/tilt-dev/tilt/releases/download/v0.32.1/tilt.0.32.1.linux.arm.tar.gz"
-      sha256 "f154a46d914c7a6b4b8149ac148dfbe4cfea4c98bdcbe447595ce0d7158bafd0"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/tilt-dev/tilt/releases/download/v0.32.2/tilt.0.32.2.linux.arm64.tar.gz"
+      sha256 "cfd7e9e90b94327e1a09c5bcbdb51aaf03be7a89aafbcc208c6418870c25b980"
 
       def install
         bin.install "tilt"
@@ -71,9 +71,9 @@ class Tilt < Formula
         (fish_completion/"tilt.fish").write output
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tilt-dev/tilt/releases/download/v0.32.1/tilt.0.32.1.linux.arm64.tar.gz"
-      sha256 "3701d7a25d67ddc26f57a52295e274d19d14d95a12a59c819e34ac64ccc9b236"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/tilt-dev/tilt/releases/download/v0.32.2/tilt.0.32.2.linux.arm.tar.gz"
+      sha256 "7fc8728a8206bdabcf9a5d050821c8a83345eddef95c8fe1b71f263822a03250"
 
       def install
         bin.install "tilt"
@@ -92,8 +92,8 @@ class Tilt < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/tilt-dev/tilt/releases/download/v0.32.1/tilt.0.32.1.linux.x86_64.tar.gz"
-      sha256 "7f3360ae042b0647d37bb4f20484da9d8b0a9cbfa11aba7bcf82e9e842060938"
+      url "https://github.com/tilt-dev/tilt/releases/download/v0.32.2/tilt.0.32.2.linux.x86_64.tar.gz"
+      sha256 "d25344958f39eda334f5ae0dc3bb2b13bdce4b85103cf05aeb120d004de186e6"
 
       def install
         bin.install "tilt"
