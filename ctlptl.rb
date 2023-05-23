@@ -5,12 +5,12 @@
 class Ctlptl < Formula
   desc "Making local Kubernetes clusters easy to set up and tear down"
   homepage "https://ctlptl.dev/"
-  version "0.8.18"
+  version "0.8.19"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.18/ctlptl.0.8.18.mac.x86_64.tar.gz"
-      sha256 "52e28a00def8db3bb1b6c728bb7711cfbb06aae3c6592ae263f1a433a2a74e0b"
+    if Hardware::CPU.arm?
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.19/ctlptl.0.8.19.mac.arm64.tar.gz"
+      sha256 "1553fdbb06d697e3cf631c59c11f2b1c55252b9aa3fa364859b165aec885d274"
 
       def install
         bin.install "ctlptl"
@@ -28,9 +28,9 @@ class Ctlptl < Formula
         (fish_completion/"ctlptl.fish").write output
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.18/ctlptl.0.8.18.mac.arm64.tar.gz"
-      sha256 "70366bc1510f4beb0cc3e5cb3360c492a47874ebeef0d2b1e99ee96358a2723b"
+    if Hardware::CPU.intel?
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.19/ctlptl.0.8.19.mac.x86_64.tar.gz"
+      sha256 "e884ba3801c0e4a27b63dd44ae1a5a27488da7ac235fa69a154c98f94595687f"
 
       def install
         bin.install "ctlptl"
@@ -51,9 +51,9 @@ class Ctlptl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.18/ctlptl.0.8.18.linux.x86_64.tar.gz"
-      sha256 "c0a2b70483ede8a672642b4bdea9c01ba4fd1c28ae85a813873480392b51c48c"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.19/ctlptl.0.8.19.linux.arm64.tar.gz"
+      sha256 "6970ebd1375c6f8ecf0ed2db96e80fd4cf10cce656c1e8bf20aa709489443113"
 
       def install
         bin.install "ctlptl"
@@ -71,9 +71,9 @@ class Ctlptl < Formula
         (fish_completion/"ctlptl.fish").write output
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.18/ctlptl.0.8.18.linux.arm64.tar.gz"
-      sha256 "8ee0a59f3249c3fca336a9805637d94e8aa2b898ee75091f47b4639c30c8b59d"
+    if Hardware::CPU.intel?
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.19/ctlptl.0.8.19.linux.x86_64.tar.gz"
+      sha256 "1256ce4b6daedf6cfaa1f21d0bfbde7d4faceefce650eb6728cd4baedfdd7ff4"
 
       def install
         bin.install "ctlptl"
