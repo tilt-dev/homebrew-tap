@@ -5,12 +5,12 @@
 class Ctlptl < Formula
   desc "Making local Kubernetes clusters easy to set up and tear down"
   homepage "https://ctlptl.dev/"
-  version "0.8.40"
+  version "0.8.41"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.40/ctlptl.0.8.40.mac.x86_64.tar.gz"
-      sha256 "df6a287d7577913afcbd8dcc08dbfd9bd3af53c70d1b0339c044c06af45edfa2"
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.41/ctlptl.0.8.41.mac.x86_64.tar.gz"
+      sha256 "bf83572ee6c7ceb866ca6257eb9126aba6ec1a8559318868322773aa913cbd88"
 
       def install
         bin.install "ctlptl"
@@ -29,8 +29,8 @@ class Ctlptl < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.40/ctlptl.0.8.40.mac.arm64.tar.gz"
-      sha256 "8ddaf75e4a867e32a841f632df7be1c873637c109877bfd3994880a60dda0367"
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.41/ctlptl.0.8.41.mac.arm64.tar.gz"
+      sha256 "df5b43f237debd0b012bfb7f1eeeeaf705cdc1a1fc5717faa36e720566af157c"
 
       def install
         bin.install "ctlptl"
@@ -51,48 +51,42 @@ class Ctlptl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.40/ctlptl.0.8.40.linux.x86_64.tar.gz"
-        sha256 "e62965ea159e512d47971d8558c1db28cd4414c0d65488b0825984ed521eb4e8"
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.41/ctlptl.0.8.41.linux.x86_64.tar.gz"
+      sha256 "614154405dd5085c773d82c5943ad295a4926bcbb8b9361cf42570392e319c8f"
+      def install
+        bin.install "ctlptl"
 
-        def install
-          bin.install "ctlptl"
+        # Install bash completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "bash")
+        (bash_completion/"ctlptl").write output
 
-          # Install bash completion
-          output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "bash")
-          (bash_completion/"ctlptl").write output
+        # Install zsh completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "zsh")
+        (zsh_completion/"_ctlptl").write output
 
-          # Install zsh completion
-          output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "zsh")
-          (zsh_completion/"_ctlptl").write output
-
-          # Install fish completion
-          output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "fish")
-          (fish_completion/"ctlptl.fish").write output
-        end
+        # Install fish completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "fish")
+        (fish_completion/"ctlptl.fish").write output
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.40/ctlptl.0.8.40.linux.arm64.tar.gz"
-        sha256 "da50985b396671f4094237b64c6c8e811b84f2b9d6855c0297846816b558d13b"
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.8.41/ctlptl.0.8.41.linux.arm64.tar.gz"
+      sha256 "34aa61986495c722ba241af71bbcc81dbbb5f9e42b4ea1938dc44a6060b22b8b"
+      def install
+        bin.install "ctlptl"
 
-        def install
-          bin.install "ctlptl"
+        # Install bash completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "bash")
+        (bash_completion/"ctlptl").write output
 
-          # Install bash completion
-          output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "bash")
-          (bash_completion/"ctlptl").write output
+        # Install zsh completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "zsh")
+        (zsh_completion/"_ctlptl").write output
 
-          # Install zsh completion
-          output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "zsh")
-          (zsh_completion/"_ctlptl").write output
-
-          # Install fish completion
-          output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "fish")
-          (fish_completion/"ctlptl.fish").write output
-        end
+        # Install fish completion
+        output = Utils.safe_popen_read("#{bin}/ctlptl", "completion", "fish")
+        (fish_completion/"ctlptl.fish").write output
       end
     end
   end
