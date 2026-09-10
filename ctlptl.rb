@@ -5,12 +5,12 @@
 class Ctlptl < Formula
   desc "Making local Kubernetes clusters easy to set up and tear down"
   homepage "https://ctlptl.dev/"
-  version "0.9.5"
+  version "0.9.6"
 
   on_macos do
     on_intel do
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.9.5/ctlptl.0.9.5.mac.x86_64.tar.gz"
-      sha256 "d26b3fb661412b84c69d5ce2a740e1fd380d91730e3ee54b36a7268d20ed8c60"
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.9.6/ctlptl.0.9.6.mac.x86_64.tar.gz"
+      sha256 "3b0eee55ab60add887e44dcbd241594b61552cff89ea04cce7ee40e1fc586515"
 
       def install
         bin.install "ctlptl"
@@ -29,8 +29,8 @@ class Ctlptl < Formula
       end
     end
     on_arm do
-      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.9.5/ctlptl.0.9.5.mac.arm64.tar.gz"
-      sha256 "58261c33d32407ccbb69ca8445cc9d014e399e585f966fdd833ccee3b304751a"
+      url "https://github.com/tilt-dev/ctlptl/releases/download/v0.9.6/ctlptl.0.9.6.mac.arm64.tar.gz"
+      sha256 "6ef761e27f68e002279054a4f9536887ccb94b118faee7bcf41bc905691ed2a3"
 
       def install
         bin.install "ctlptl"
@@ -53,8 +53,8 @@ class Ctlptl < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/tilt-dev/ctlptl/releases/download/v0.9.5/ctlptl.0.9.5.linux.x86_64.tar.gz"
-        sha256 "cf5f0f918c34de069047706448d825015843beb1a829ec3ab2d3b81f6e309d18"
+        url "https://github.com/tilt-dev/ctlptl/releases/download/v0.9.6/ctlptl.0.9.6.linux.x86_64.tar.gz"
+        sha256 "a83ad620d04a526fd4186adfab9e757e8d59b9becf9b1244a9416dfaabec610f"
 
         def install
           bin.install "ctlptl"
@@ -75,8 +75,8 @@ class Ctlptl < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/tilt-dev/ctlptl/releases/download/v0.9.5/ctlptl.0.9.5.linux.arm64.tar.gz"
-        sha256 "6096babbc4a7998fd3d2d8fee9c7a51efc2435e22e7a8dc990bb815587d03704"
+        url "https://github.com/tilt-dev/ctlptl/releases/download/v0.9.6/ctlptl.0.9.6.linux.arm64.tar.gz"
+        sha256 "6817485bee0be90889d5acf56920dcc890d8fbec31477f7a97353e08b86db8ac"
 
         def install
           bin.install "ctlptl"
